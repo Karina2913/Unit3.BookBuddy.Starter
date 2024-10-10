@@ -1,8 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import bookLogo from './assets/books.png'
+import { fetchAllBooks, fetchSingleBook } from './API'
+import { Routes, Route, Link } from 'react-router-dom'
 
-function App() {
+export default function App() {
   const [token, setToken] = useState(null)
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const getAllBooks = async () => {
+      try {
+        const books = await fetchAllBooks();
+        setBooks(books);
+      } catch (error) {
+        console.error("Whoops! There was an error fetching all books.", error);
+      }
+    }
+    getAllBooks();
+  }, []);
 
   return (
     <>
@@ -16,5 +31,3 @@ function App() {
     </>
   )
 }
-
-export default App
