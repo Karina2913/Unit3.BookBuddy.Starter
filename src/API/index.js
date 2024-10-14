@@ -14,9 +14,9 @@ export async function fetchAllBooks() {
 // fetching singleBook GET
 export async function fetchSingleBook(bookId) {
     try {
-        const response = await fetch(`${API_URL}/books/:${bookId}`);
-        const result = response.json();
-        return result.books;
+        const response = await fetch(`${API_URL}/books/${bookId}`);
+        const result = await response.json();
+        return result.book;
     } catch (error) {
         console.error("Oops, there was an error getting your book!", error);
     }

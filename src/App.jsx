@@ -11,7 +11,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Books />} />
-        <Route path="/book/:id" element={<SingleBook />} />
+        <Route path="/books/:id" element={<SingleBook />} />
       </Routes>
     </>
   )
