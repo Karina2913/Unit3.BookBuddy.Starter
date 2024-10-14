@@ -5,6 +5,7 @@ import BookCard from './BookCard';
 
 export default function Books() {
   const [books, setBooks] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const getAllBooks = async () => {
@@ -18,10 +19,25 @@ export default function Books() {
     getAllBooks();
   }, []);
 
+  // using filter to get specific book and storing it in 'filteredBooks'
+  const filteredBooks = books.filter(book => 
+    book.title.toLowerCase().includes(search.toLowerCase())
+  );
+
     return (
         <>
             <div>
-                {books.map((book) => {
+                <input 
+                    type="text"
+                    placeholder="Search book"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                /> 
+            </div>
+            <div>
+                {/* If search has a value, then we're using filteredBooks.map to display 
+                filtered books. Otherwise, we use books.map and display all books */}
+                {(search ? filteredBooks : books).map((book) => {
                     return (
                         <BookCard key={book.id} book={book} setBooks={setBooks} />
                     );
