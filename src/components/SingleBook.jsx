@@ -13,7 +13,6 @@ export default function SingleBook() {
             try {
                 const getSingleBook = await fetchSingleBook(id);
                 setBook(getSingleBook);
-                console.log(getSingleBook);
             } catch (error) {
                 console.error("Oops, there was an error fetching the book!", error);
             }

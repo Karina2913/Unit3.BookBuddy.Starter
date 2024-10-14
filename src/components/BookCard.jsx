@@ -19,7 +19,7 @@ export default function BookCard({ book, setBooks, isSingle }) {
             </div>
             <div className="book-info">
                 <h3 className="book-title">{book.title}</h3>
-                <p className="book-description">{book.description}</p>
+                {isSingle && <p className="book-description">{book.description}</p>}
             </div>
             {isSingle ? (
                 <button onClick={backButton}>Back</button>
