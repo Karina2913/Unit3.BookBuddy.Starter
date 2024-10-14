@@ -5,6 +5,7 @@ import Books from './components/Books'
 import SingleBook from './components/SingleBook'
 import Navigations from './components/Navigations'
 import Register from './components/Register'
+import Login from './components/Login'
 
 export default function App() {
   const [token, setToken] = useState(null);
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/" element={<Books />} />
         <Route path="/books/:id" element={<SingleBook />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   )
