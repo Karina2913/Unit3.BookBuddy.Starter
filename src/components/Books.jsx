@@ -35,6 +35,8 @@ export default function Books() {
                 /> 
             </div>
             <div>
+                {/* If search has a value, then we're using filteredBooks.map to display 
+                filtered books. Otherwise, we use books.map and display all books */}
                 {(search ? filteredBooks : books).map((book) => {
                     return (
                         <BookCard key={book.id} book={book} setBooks={setBooks} />
