@@ -42,7 +42,7 @@ export default function Login({ setToken }) {
       <div className="login-form">
         <label htmlFor="password">Password:</label>
         <input
-          type="text"
+          type="password"
           required
           name="password"
           id="password"
