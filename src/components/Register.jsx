@@ -43,7 +43,7 @@ export default function Register({ setToken }) {
           id="firstName"
           value={firstName}
           placeholder="First Name"
-          oncChange={(event) => setFirstName(event.targetValue)}
+          onChange={(event) => setFirstName(event.targetValue)}
         />
       </div>
       <div className="register-form">
@@ -55,7 +55,7 @@ export default function Register({ setToken }) {
           id="lastName"
           value={lastName}
           placeholder="Last Name"
-          oncChange={(event) => setLastName(event.targetValue)}
+          onChange={(event) => setLastName(event.targetValue)}
         />
       </div>
       <div className="register-form">
@@ -67,7 +67,7 @@ export default function Register({ setToken }) {
           id="email"
           value={email}
           placeholder="Email"
-          oncChange={(event) => setEmail(event.targetValue)}
+          onChange={(event) => setEmail(event.targetValue)}
         />
       </div>
       <div className="register-form">
@@ -79,7 +79,7 @@ export default function Register({ setToken }) {
           id="password"
           value={password}
           placeholder="Password"
-          oncChange={(event) => setPassword(event.targetValue)}
+          onChange={(event) => setPassword(event.targetValue)}
         />
       </div>
       <button type="submit">Register!</button>
