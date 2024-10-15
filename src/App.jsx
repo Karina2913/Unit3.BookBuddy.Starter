@@ -13,7 +13,8 @@ export default function App() {
   // TODO sign out using local storage and user's assigned token
 
   return (
-    <>
+    <div>
+      <Navigations token={token} setToken={setToken} />
       <Routes>
         <Route path="/books" element={<Books />} />
         <Route path="/books/:id" element={<SingleBook />} />
@@ -21,6 +22,6 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<Account />} />
       </Routes>
-    </>
+    </div>
   );
 }
