@@ -6,6 +6,7 @@ import SingleBook from "./components/SingleBook";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/Account";
+import Navigations from "./components/Navigations";
 
 export default function App() {
   const [token, setToken] = useState(null);
