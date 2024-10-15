@@ -13,6 +13,7 @@ export async function fetchAllBooks() {
 
 // fetching singleBook GET
 export async function fetchSingleBook(bookId) {
+
   try {
     const response = await fetch(`${API_URL}/books/${bookId}`);
     const result = await response.json();
