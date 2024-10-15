@@ -36,7 +36,7 @@ export default function Login({ setToken }) {
           id="email"
           value={email}
           placeholder="Email"
-          onChange={(event) => setEmail(event.targetValue)}
+          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
       <div className="login-form">
@@ -48,7 +48,7 @@ export default function Login({ setToken }) {
           id="password"
           value={password}
           placeholder="Password"
-          onChange={(event) => setPassword(event.targetValue)}
+          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
       <button type="submit">Log In!</button>
