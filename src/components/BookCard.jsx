@@ -17,13 +17,21 @@ export default function BookCard({ book, isSingle, token }) {
     navigate("/reservations");
   };
 
-  console.log("book available", book.available);
-
   return (
     <div className="book-card">
       <h3 className="book-title">{book.title}</h3>
       <h3>{book.author}</h3>
       <img src={book.coverimage} alt={book.title} />
+      {book.available ? (
+        <div>
+            <h3>This book is available for check out!</h3>
+                {token ? (
+                <button onClick={checkOutButton} className="check-out-button">Check Out</button>
+                ) : (null)}
+        </div>
+      ) : (
+        <h3>This book is unavailable!</h3>
+      )}
       {isSingle ? (
         <>
           <h3>{book.description}</h3>
@@ -31,10 +39,20 @@ export default function BookCard({ book, isSingle, token }) {
           <button onClick={backButton} className="book-card-button">
             Go Back
           </button>
-          {token && book.available && (
+          {/* {token && (
             <button onClick={checkOutButton} className="check-out-button">Check Out</button>
-          )}
+          )} */}
           {/* <button onClick={checkOutButton} className="check-out-button">Check Out</button> */}
+          {/* {book.available ? (
+        <div>
+            <h3>This book is available for check out!</h3>
+                {token ? (
+                <button onClick={checkOutButton} className="check-out-button">Check Out</button>
+                ) : (null)}
+        </div>
+      ) : (
+        <h3>This book is unavailable!</h3>
+      )} */}
         </>
       ) : (
         <button onClick={detailsButton} className="book-card-button">

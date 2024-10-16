@@ -78,4 +78,19 @@ export async function fetchReservations() {
     } catch (error) {
       console.error("Whoops! Error fetching all books", error);
     }
-  }
+}
+
+export async function fetchAccountInfo() {
+    try {
+        const response = await fetch(`${API_URL}/users/me`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            }
+        });
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error("Oops, There was an error!", error);
+    }
+}
