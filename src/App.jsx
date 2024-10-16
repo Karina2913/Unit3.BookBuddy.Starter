@@ -9,7 +9,7 @@ import Account from "./components/Account";
 import Navigations from "./components/Navigations";
 
 export default function App() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState('');
 
   // TODO sign out using local storage and user's assigned token
 
@@ -19,8 +19,8 @@ export default function App() {
       <Routes>
         <Route path="/books" element={<Books />} />
         <Route path="/books/:id" element={<SingleBook />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login setToken={setToken} />} />
+        <Route path="/register" element={<Register setToken={setToken} />} />
         <Route path="/account" element={<Account />} />
       </Routes>
     </div>

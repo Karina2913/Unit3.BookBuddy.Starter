@@ -12,6 +12,7 @@ export default function Register({ setToken }) {
 
   async function infoSubmit(event) {
     event.preventDefault();
+    console.log("set token:", setToken);
 
     // The properties from the register form will be used to create the new user
     const newUser = await registerUser(firstName, lastName, email, password);
@@ -25,7 +26,7 @@ export default function Register({ setToken }) {
     setPassword("");
 
     // When the user successfully registers, they will navigate back to the home page
-    useNavigate("/books");
+    navigate("/books");
   }
 
   return (
@@ -43,7 +44,7 @@ export default function Register({ setToken }) {
           id="firstName"
           value={firstName}
           placeholder="First Name"
-          onChange={(event) => setFirstName(event.targetValue)}
+          onChange={(event) => setFirstName(event.target.value)}
         />
       </div>
       <div className="register-form">
@@ -55,7 +56,7 @@ export default function Register({ setToken }) {
           id="lastName"
           value={lastName}
           placeholder="Last Name"
-          onChange={(event) => setLastName(event.targetValue)}
+          onChange={(event) => setLastName(event.target.value)}
         />
       </div>
       <div className="register-form">
@@ -67,7 +68,7 @@ export default function Register({ setToken }) {
           id="email"
           value={email}
           placeholder="Email"
-          onChange={(event) => setEmail(event.targetValue)}
+          onChange={(event) => setEmail(event.target.value)}
         />
       </div>
       <div className="register-form">
@@ -79,7 +80,7 @@ export default function Register({ setToken }) {
           id="password"
           value={password}
           placeholder="Password"
-          onChange={(event) => setPassword(event.targetValue)}
+          onChange={(event) => setPassword(event.target.value)}
         />
       </div>
       <button type="submit">Register!</button>
