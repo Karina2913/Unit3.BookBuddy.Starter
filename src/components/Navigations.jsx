@@ -6,7 +6,7 @@ export default function Navigations ({ token, setToken }) {
 
     const handleLogOut = () => {
         setToken(null);
-        navigate("/login");
+        navigate("/users/login");
     }
 
     return (
@@ -16,8 +16,8 @@ export default function Navigations ({ token, setToken }) {
                     <button onClick={handleLogOut}>Log Out</button>
                 ) : (
                     <>
-                        <Link className="link" to="/register">Sign Up</Link>
-                        <Link className="link" to="/login">Log In</Link>
+                        <Link className="link" to="/users/register">Sign Up</Link>
+                        <Link className="link" to="/users/login">Log In</Link>
                     </>
                 )}
             </div>
