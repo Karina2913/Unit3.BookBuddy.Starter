@@ -7,9 +7,10 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Account from "./components/Account";
 import Navigations from "./components/Navigations";
+import Reservations from "./components/Reservations";
 
 export default function App() {
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState("");
 
   // TODO sign out using local storage and user's assigned token
 
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/login" element={<Login setToken={setToken} />} />
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/reservations" element={<Reservations token={token} />} />
       </Routes>
     </div>
   );

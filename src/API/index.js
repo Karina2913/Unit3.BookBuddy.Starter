@@ -64,3 +64,18 @@ export async function registerUser(firstName, lastName, email, password) {
     console.log("Uh oh, there was an error registering user!", error);
   }
 }
+
+// reservations GET
+export async function fetchReservations() {
+    try {
+      const response = await fetch(`${API_URL}/reservations`, {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+      });
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Whoops! Error fetching all books", error);
+    }
+  }

@@ -2,7 +2,7 @@ import "./BookCard.css";
 import { useNavigate } from "react-router-dom";
 import SingleBook from "./SingleBook.jsx";
 
-export default function BookCard({ book, isSingle }) {
+export default function BookCard({ book, isSingle, token }) {
   const navigate = useNavigate();
 
   const detailsButton = () => {
@@ -12,6 +12,12 @@ export default function BookCard({ book, isSingle }) {
   const backButton = () => {
     navigate("/books");
   };
+
+  const checkOutButton = () => {
+    navigate("/reservations");
+  };
+
+  console.log("book available", book.available);
 
   return (
     <div className="book-card">
@@ -25,6 +31,10 @@ export default function BookCard({ book, isSingle }) {
           <button onClick={backButton} className="book-card-button">
             Go Back
           </button>
+          {token && book.available && (
+            <button onClick={checkOutButton} className="check-out-button">Check Out</button>
+          )}
+          {/* <button onClick={checkOutButton} className="check-out-button">Check Out</button> */}
         </>
       ) : (
         <button onClick={detailsButton} className="book-card-button">
