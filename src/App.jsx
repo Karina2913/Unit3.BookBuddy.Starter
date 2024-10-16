@@ -10,9 +10,15 @@ import Navigations from "./components/Navigations";
 import Reservations from "./components/Reservations";
 
 export default function App() {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token") || null);
 
-  // TODO sign out using local storage and user's assigned token
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("token", token);
+    } else {
+      localStorage.removeItem("token");
+    }
+  }, [token]);
 
   return (
     <div>
