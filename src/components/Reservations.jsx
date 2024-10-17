@@ -3,14 +3,15 @@ import { fetchReservations } from '../API';
 import BookCard from './BookCard';
 import { Navigate, useNavigate } from 'react-router-dom';
 
-export default function Reservations({ token }) {
+export default function Reservations() {
     const [books, setBooks] = useState([]);
     const navigate = useNavigate();
+    const token = localStorage.getItem("token");
     
     useEffect(() => {
         const getReservedBooks = async () => {
             if (!token) {
-                navigate('/login');
+                navigate('/users/login');
                 return;
             }
             try {
@@ -30,9 +31,9 @@ export default function Reservations({ token }) {
                 <p>No books checked out!</p>
             ) : (
                 <div>
-                    {books.map(book => {
+                    {books.map(book => (
                         <BookCard key={book.id} book={book} token={token} />
-                    })}
+                    ))}
                 </div>
             )}
         </div>

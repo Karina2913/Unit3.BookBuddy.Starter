@@ -66,27 +66,28 @@ export async function registerUser(firstName, lastName, email, password) {
 }
 
 // reservations GET
-export async function fetchReservations() {
+export async function fetchReservations(token) {
     try {
       const response = await fetch(`${API_URL}/reservations`, {
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
         }
       });
       const result = await response.json();
-      return result;
+      return result.reservation;
     } catch (error) {
       console.error("Whoops! Error fetching all books", error);
     }
 }
 
-export async function fetchAccountInfo() {
+export async function fetchAccountInfo(token) {
     try {
         const response = await fetch(`${API_URL}/users/me`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
-            }
+            },
         });
         const result = await response.json();
         return result;

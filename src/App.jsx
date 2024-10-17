@@ -26,10 +26,11 @@ export default function App() {
       <Routes>
         <Route path="/books" element={<Books />} />
         <Route path="/books/:id" element={<SingleBook />} />
-        <Route path="/login" element={<Login setToken={setToken} />} />
-        <Route path="/register" element={<Register setToken={setToken} />} />
+        <Route path="/users/login" element={<Login setToken={setToken} />} />
+        <Route path="/users/register" element={<Register setToken={setToken} />} />
         <Route path="/account" element={<Account />} />
         <Route path="/reservations" element={<Reservations token={token} />} />
+        <Route path='/users/me' element={<Account token={token} />} />
       </Routes>
     </div>
   );
