@@ -1,6 +1,7 @@
 import "./BookCard.css";
 import { useNavigate } from "react-router-dom";
 import SingleBook from "./SingleBook.jsx";
+import BookAvailable from "./BookAvailable.jsx";
 
 export default function BookCard({ book, isSingle, token }) {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ export default function BookCard({ book, isSingle, token }) {
       ) : (
         <h3>This book is unavailable!</h3>
       )} */}
+        <BookAvailable book={book} />
         </>
       ) : (
         <button onClick={detailsButton} className="book-card-button">

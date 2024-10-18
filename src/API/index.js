@@ -95,3 +95,22 @@ export async function fetchAccountInfo(token) {
         console.error("Oops, There was an error!", error);
     }
 }
+
+export async function bookAvailability(bookId, token) {
+    try {
+        const response = await fetch(`${API_URL}/books/${bookId}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                available: false,
+            })
+        })
+        const result = response.json();
+        return result;
+    } catch (error) {
+        console.error("Whoops, there was an error updating book's availability!", error);
+    }
+}
