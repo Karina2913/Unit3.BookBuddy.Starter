@@ -75,6 +75,7 @@ export async function fetchReservations(token) {
         }
       });
       const result = await response.json();
+      console.log("result.reservation", result.reservation);
       return result.reservation;
     } catch (error) {
       console.error("Whoops! Error fetching all books", error);

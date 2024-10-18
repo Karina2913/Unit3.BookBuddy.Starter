@@ -40,21 +40,7 @@ export default function BookCard({ book, isSingle, token }) {
           <button onClick={backButton} className="book-card-button">
             Go Back
           </button>
-          {/* {token && (
-            <button onClick={checkOutButton} className="check-out-button">Check Out</button>
-          )} */}
-          {/* <button onClick={checkOutButton} className="check-out-button">Check Out</button> */}
-          {/* {book.available ? (
-        <div>
-            <h3>This book is available for check out!</h3>
-                {token ? (
-                <button onClick={checkOutButton} className="check-out-button">Check Out</button>
-                ) : (null)}
-        </div>
-      ) : (
-        <h3>This book is unavailable!</h3>
-      )} */}
-        <BookAvailable book={book} />
+          <BookAvailable book = {book} />
         </>
       ) : (
         <button onClick={detailsButton} className="book-card-button">
