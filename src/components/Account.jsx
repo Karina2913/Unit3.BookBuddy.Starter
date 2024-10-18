@@ -28,8 +28,6 @@ export default function Account() {
   return (
     <div>
       <h1>Welcome!</h1>
-      {/* <h4>First Name: {userInfo.firstname}</h4>
-      <h4>Last Name: {userInfo.lastname}</h4> */}
       <h4>Email: {userInfo.email}</h4>
       <Reservations />
     </div>

@@ -14,6 +14,7 @@ export default function BookAvailable ({ book }) {
         }
     }
 
+    console.log("available books", book);
     return (
         <div>
             <h3>This book is: {isAvailable ? 'Available': 'Checked Out'}</h3>
