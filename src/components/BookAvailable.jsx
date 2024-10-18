@@ -6,8 +6,12 @@ export default function BookAvailable ({ book }) {
     const token = localStorage.getItem("token");
 
     const handleAvailabilityUpdate = async () => {
-        const updatedBook = await bookAvailability(book.id, token);
+        const updatedAvailability = !isAvailable;
+        const updatedBook = await bookAvailability(book.id, updatedAvailability, token);
 
+        if (updatedBook) {
+            setIsAvailable(updatedBook.available);
+        }
     }
 
     return (

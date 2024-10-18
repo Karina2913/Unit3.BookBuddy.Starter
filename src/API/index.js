@@ -96,7 +96,7 @@ export async function fetchAccountInfo(token) {
     }
 }
 
-export async function bookAvailability(bookId, token) {
+export async function bookAvailability(bookId, available, token) {
     try {
         const response = await fetch(`${API_URL}/books/${bookId}`, {
             method: "PATCH",
@@ -105,7 +105,7 @@ export async function bookAvailability(bookId, token) {
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
-                available: false,
+                available,
             })
         })
         const result = response.json();
