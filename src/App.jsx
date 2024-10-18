@@ -24,6 +24,7 @@ export default function App() {
     <div>
       <Navigations token={token} setToken={setToken} />
       <Routes>
+        <Route path="/" element={<Books />} />
         <Route path="/books" element={<Books />} />
         <Route path="/books/:id" element={<SingleBook />} />
         <Route path="/users/login" element={<Login setToken={setToken} />} />
