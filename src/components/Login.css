@@ -1,0 +1,40 @@
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-welcome-message {
+  font-size: x-large;
+}
+
+.login-info-prompt {
+  font-size: medium;
+  margin-bottom: 20x;
+}
+
+.login-email-field {
+  margin-bottom: 20px;
+}
+
+.login-password-field {
+  margin-bottom: 20px;
+}
+
+.login-email-input {
+  margin-left: 35px;
+  width: 70%;
+}
+
+.login-input {
+  margin-left: 10px;
+  width: 70%;
+}
+
+.login-submit-button {
+  margin-left: 175px;
+}

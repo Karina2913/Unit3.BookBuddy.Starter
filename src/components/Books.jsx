@@ -28,6 +28,7 @@ export default function Books() {
     <>
       <div>
         <input
+          className="search-bar"
           type="text"
           placeholder="Search book"
           value={search}
