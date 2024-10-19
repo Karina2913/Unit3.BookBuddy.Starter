@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../API";
+import "./Register.css";
 
 export default function Register({ setToken }) {
   const [firstName, setFirstName] = useState("");
@@ -30,14 +31,17 @@ export default function Register({ setToken }) {
   }
 
   return (
-    <form onSubmit={infoSubmit}>
-      <h2>
-        Hello, fellow book buddy! Please enter the following information to
-        register!
-      </h2>
-      <div className="register-form">
+    <form className="register-form" onSubmit={infoSubmit}>
+      <div>
+        <h2 className="register-welcome-message">Hello, fellow book buddy!</h2>
+        <p className="register-info-prompt">
+          Please enter the following information to register!
+        </p>
+      </div>
+      <div className="register-first-name-field">
         <label htmlFor="firstName">First Name:</label>
         <input
+          className="register-first-input"
           type="text"
           required
           name="firstName"
@@ -47,9 +51,10 @@ export default function Register({ setToken }) {
           onChange={(event) => setFirstName(event.target.value)}
         />
       </div>
-      <div className="register-form">
+      <div className="register-last-name-field">
         <label htmlFor="lastName">Last Name:</label>
         <input
+          className="register-last-input"
           type="text"
           required
           name="lastName"
@@ -59,9 +64,10 @@ export default function Register({ setToken }) {
           onChange={(event) => setLastName(event.target.value)}
         />
       </div>
-      <div className="register-form">
+      <div className="register-email-field">
         <label htmlFor="email">Email:</label>
         <input
+          className="register-email-input"
           type="text"
           required
           name="email"
@@ -71,9 +77,10 @@ export default function Register({ setToken }) {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div className="register-form">
+      <div className="register-password-field">
         <label htmlFor="password">Password:</label>
         <input
+          className="register-password-input"
           type="password"
           required
           name="password"
@@ -83,7 +90,9 @@ export default function Register({ setToken }) {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button type="submit">Register!</button>
+      <button className="register-submit-button" type="submit">
+        Register!
+      </button>
     </form>
   );
 }

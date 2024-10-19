@@ -1,6 +1,6 @@
 body {
   font-family: Georgia, serif;
-  background-color: #f8f8f8;
+  background-color: #b2b2b2;
   margin: 0;
   padding: 0;
 }
@@ -11,3 +11,8 @@ body {
 }
 
 /* Add your own custom styles here */
+.search-bar {
+  margin-left: 375px;
+  margin-top: 50px;
+  width: 275px;
+}

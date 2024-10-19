@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../API";
+import "./Login.css";
 
 export default function Login({ setToken }) {
   const [email, setEmail] = useState("");
@@ -25,11 +26,17 @@ export default function Login({ setToken }) {
   }
 
   return (
-    <form onSubmit={infoSubmit}>
-      <h2>Welcome Back! Please enter the following information to log in!</h2>
-      <div className="login-form">
+    <form className="login-form" onSubmit={infoSubmit}>
+      <div>
+        <h2 className="login-welcome-message">Welcome Back!</h2>
+        <p className="login-info-prompt">
+          Please enter the following information to log in!
+        </p>
+      </div>
+      <div className="login-email-field">
         <label htmlFor="email">Email:</label>
         <input
+          className="login-email-input"
           type="text"
           required
           name="email"
@@ -39,9 +46,10 @@ export default function Login({ setToken }) {
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div className="login-form">
+      <div className="login-password-field">
         <label htmlFor="password">Password:</label>
         <input
+          className="login-input"
           type="password"
           required
           name="password"
@@ -51,7 +59,9 @@ export default function Login({ setToken }) {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button type="submit">Log In!</button>
+      <button className="login-submit-button" type="submit">
+        Log In!
+      </button>
     </form>
   );
 }
