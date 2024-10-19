@@ -8,15 +8,9 @@ export default function SingleBook() {
   const [book, setBook] = useState(null);
   const { id } = useParams();
 
-  console.log("book", book);
-  console.log("id", id);
-
   useEffect(() => {
     const getSingleBook = async (id) => {
       const singleBook = await fetchSingleBook(id);
-
-      console.log(singleBook);
-
       setBook(singleBook);
     };
     getSingleBook(id);

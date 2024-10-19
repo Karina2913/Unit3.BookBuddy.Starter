@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { fetchReservations } from '../API';
 import BookCard from './BookCard';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { deleteReservation } from '../API';
 
 export default function Reservations() {
     const [books, setBooks] = useState([]);
