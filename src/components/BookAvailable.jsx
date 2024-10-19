@@ -24,9 +24,6 @@ export default function BookAvailable({ book }) {
             <button className="check-out-button" onClick={handleAvailabilityUpdate}>
                 {isAvailable ? 'Check Out' : 'Return'} Book
             </button>
-            {/* {!book.available && bookCheckedOut && (
-            <button onClick={handleReturnButton} className="book-card-button">Return Book</button>
-          )} */}
         </div>
     )
 }
