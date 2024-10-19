@@ -75,7 +75,6 @@ export async function fetchReservations(token) {
         }
       });
       const result = await response.json();
-      console.log("result.reservation", result.reservation);
       return result.reservation;
     } catch (error) {
       console.error("Whoops! Error fetching all books", error);
@@ -113,5 +112,22 @@ export async function bookAvailability(bookId, available, token) {
         return result;
     } catch (error) {
         console.error("Whoops, there was an error updating book's availability!", error);
+    }
+}
+
+export async function deleteReservation (reservationId, token) {
+    try {
+        const response = await fetch(`${API_URL}/reservations/${reservationId}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        const result = response.json();
+        console.log("result", result);
+        return result;
+    } catch (error) {
+        console.error("Oops, there was an error deleting the reserved book.", error);
     }
 }

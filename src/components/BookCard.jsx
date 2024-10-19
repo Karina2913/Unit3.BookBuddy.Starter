@@ -2,8 +2,9 @@ import "./BookCard.css";
 import { useNavigate } from "react-router-dom";
 import SingleBook from "./SingleBook.jsx";
 import BookAvailable from "./BookAvailable.jsx";
+import { deleteReservation } from "../API/index.js";
 
-export default function BookCard({ book, isSingle, token }) {
+export default function BookCard({ book, books, isSingle, token }) {
   const navigate = useNavigate();
 
   const detailsButton = () => {
@@ -14,9 +15,28 @@ export default function BookCard({ book, isSingle, token }) {
     navigate("/books");
   };
 
-  const checkOutButton = () => {
-    navigate("/reservations");
-  };
+//   const handleReturnButton = async () => {
+//     const reservationId = book.reservationId;
+//     // const result = await deleteReservation(book.reservationId, token);
+
+//     // test whether book is checked out by user, name it bookCheckedOut
+//     if (!book.available) {
+//         let bookCheckedOut = false;
+//         for (let i = 0; i < books.length; i++) {
+//             if (books[i].bookId === book.id) {
+//                 bookCheckedOut = true;
+//                 return;
+//             } 
+//         }
+
+//         if (bookCheckedOut) {
+//             const result = await deleteReservation(reservationId, token);
+//             if (result) {
+//                 console.log("You returned the book!") 
+//             }
+//           }
+//         }
+//     }
 
   return (
     <div className="book-card">
