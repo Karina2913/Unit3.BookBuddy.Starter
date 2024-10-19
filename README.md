@@ -1,3 +1,5 @@
+Deployed Site: https://helpful-pegasus-b17dd8.netlify.app/
+
 # Block 30 - Book Buddy
 
 ## Introduction
