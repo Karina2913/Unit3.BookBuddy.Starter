@@ -17,7 +17,7 @@ export default function Navigations ({ token, setToken }) {
                 ) : (
                     <>
                         <Link className="link" to="/users/register">Sign Up</Link>
-                        <Link className="link" to="/users/login">Log In</Link>
+                        <Link className="link" to="/users/login">Log In</Link>        
                     </>
                 )}
             </div>
