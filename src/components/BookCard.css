@@ -1,3 +1,62 @@
 img {
-    width: 200px;
+  width: 80%;
+  height: 60%;
+  background-color: #e8e8e8;
+  margin: 10px;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.book-card {
+  width: 300px;
+  height: auto;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 25px;
+}
+
+.check-out-button {
+  margin-left: 15px;
+}
+
+.button-container {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+.book-title {
+  margin: 10px;
+  font-size: medium;
+}
+
+.book-author {
+  margin: 10px 0;
+  font-size: small;
+}
+
+.book-description {
+  font-size: small;
+  margin: 25px;
+}
+
+.available {
+  text-align: center;
+  font-size: small;
+  color: green;
+}
+
+.unavailable {
+  text-align: center;
+  font-size: small;
+  color: red;
 }

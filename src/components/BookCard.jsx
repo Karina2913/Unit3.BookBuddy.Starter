@@ -41,24 +41,30 @@ export default function BookCard({ book, books, isSingle, token }) {
   return (
     <div className="book-card">
       <h3 className="book-title">{book.title}</h3>
-      <h3>{book.author}</h3>
+      <h3 className="book-author">{book.author}</h3>
       <img src={book.coverimage} alt={book.title} />
       {book.available ? (
-        <h3>This book is available for check out!</h3>
+        <div>
+          <h3 className="available">This book is available for check out!</h3>
+          {token ? (
+            <button onClick={checkOutButton} className="check-out-button">
+              Check Out
+            </button>
+          ) : null}
+        </div>
       ) : (
-        <h3>This book is unavailable!</h3>
+        <h3 className="unavailable">This book is unavailable!</h3>
       )}
       {isSingle ? (
         <>
-          <h3>{book.description}</h3>
-          <h3>{book.available}</h3>
-          <button onClick={backButton} className="book-card-button">
-            Go Back
-          </button>
-          <BookAvailable book = {book} />
-          {/* {!book.available && bookCheckedOut && (
-            <button onClick={handleReturnButton} className="book-card-button">Return Book</button>
-          )} */}
+          <p className="book-description">{book.description}</p>
+          {/* <h3>{book.available}</h3> */}
+          <div className="button-container">
+            <button onClick={backButton} className="book-card-button">
+              Go Back
+            </button>
+            <BookAvailable book={book} />
+          </div>
         </>
       ) : (
         <button onClick={detailsButton} className="book-card-button">
