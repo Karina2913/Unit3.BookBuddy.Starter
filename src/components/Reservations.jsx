@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchReservations } from '../API';
 import BookCard from './BookCard';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Reservations() {
     const [books, setBooks] = useState([]);
@@ -23,8 +23,6 @@ export default function Reservations() {
         }
         getReservedBooks();
     }, [token]);
-    console.log("reserved books", books);
-    // console.log("token", token);
 
     return (
         <div>
