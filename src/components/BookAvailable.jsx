@@ -18,9 +18,13 @@ export default function BookAvailable ({ book }) {
     return (
         <div>
             <h3>This book is: {isAvailable ? 'Available': 'Checked Out'}</h3>
-            <button onClick={handleAvailabilityUpdate}>
+            {/* <button onClick={handleAvailabilityUpdate}>
                 {isAvailable ? 'Check Out' : 'Return'} Book
-            </button>
+            </button> */}
+            {!book.available && bookCheckedOut && (
+            <button onClick={handleReturnButton} className="book-card-button">Return Book</button>
+          )}
         </div>
     )
 }
+``
