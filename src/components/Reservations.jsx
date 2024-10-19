@@ -23,19 +23,17 @@ export default function Reservations() {
         }
         getReservedBooks();
     }, [token]);
-    console.log("books", books);
-
-    const checkedOutBooks = books.filter(book => !book.isAvailable);
-    console.log("checked out:", checkedOutBooks);
+    console.log("reserved books", books);
+    // console.log("token", token);
 
     return (
         <div>
             <h3>Checked Out Books</h3>
-            {checkedOutBooks.length === 0 ? (
+            {books.length === 0 ? (
                 <p>No books checked out!</p>
             ) : (
                 <div>
-                    {checkedOutBooks.map(book => (
+                    {books.map(book => (
                         <BookCard key={book.id} book={book} token={token} />
                     ))}
                 </div>
